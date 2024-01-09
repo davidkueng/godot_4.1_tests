@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvm2f8v1dnike"]
+
+[ext_resource type="Texture2D" uid="uid://cksmyqseip7qi" path="res://Media/back.png" id="1_aoxo4"]
+[ext_resource type="Texture2D" uid="uid://bqv42tw1cfsxa" path="res://Media/floor.png" id="2_55wbl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrajj"]
+size = Vector2(1919.13, 359.25)
+
+[node name="main" type="Node2D"]
+
+[node name="back_ground_canvas" type="CanvasLayer" parent="."]
+
+[node name="back_ground_sprite" type="Sprite2D" parent="back_ground_canvas"]
+texture = ExtResource("1_aoxo4")
+centered = false
+
+[node name="floor_area" type="Area2D" parent="back_ground_canvas"]
+position = Vector2(0, 720)
+
+[node name="floor_sprite" type="Sprite2D" parent="back_ground_canvas/floor_area"]
+texture = ExtResource("2_55wbl")
+centered = false
+
+[node name="floor_coll" type="CollisionShape2D" parent="back_ground_canvas/floor_area"]
+position = Vector2(959, 181)
+shape = SubResource("RectangleShape2D_mrajj")
